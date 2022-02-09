@@ -3,6 +3,7 @@ title: "Aula 2"
 author: "Beatriz"
 date: "2/7/2022"
 output: html_document
+knit: pagedown::chrome_print
 ---
 
 ```{r setup, include=FALSE}

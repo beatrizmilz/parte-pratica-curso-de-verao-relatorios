@@ -14,10 +14,21 @@ knitr::opts_chunk$set(
 # parte-pratica-curso-de-verao-relatorios
 
 
+## Arquivos .Rmd
 
-```{r}
+```{r echo=FALSE}
 tibble::tibble(
-  arquivo = list.files(pattern = ".html|.Rmd"),
+  arquivo = list.files(pattern = ".Rmd"),
+url = paste0("https://github.com/beatrizmilz/parte-pratica-curso-de-verao-relatorios/blob/main/", arquivo)
+) |> 
+  knitr::kable()
+```
+
+## Arquivos .html
+
+```{r echo=FALSE}
+tibble::tibble(
+  arquivo = list.files(pattern = ".html"),
 url = paste0("https://beatrizmilz.github.io/parte-pratica-curso-de-verao-relatorios/", arquivo)
 ) |> 
   knitr::kable()

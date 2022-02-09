@@ -1,0 +1,78 @@
+---
+title: "exemplo-params"
+author: "Beatriz"
+date: "2/9/2022"
+#output: html_document
+params:
+  ano: 2007
+bibliography: [referencias/referencias_R.bib, referencias/packages.bib]
+csl: template/abnt.csl
+output: bookdown::html_document2
+  # bookdown::word_document2:
+  #   reference_docx: template/modelo.docx
+---
+# Aula 3
+
+## Exemplo parâmetros {#exemplo-parametros}
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+pinguins <- readr::read_csv("dados/pinguins.csv")
+```
+```{r}
+pinguins_filtrados <- pinguins |> 
+  dplyr::filter(ano == params$ano)
+
+dplyr::count(pinguins_filtrados)
+
+knitr::kable(pinguins_filtrados)
+
+
+```
+
+```
+rmarkdown::render("aula-3-exemplo-params.Rmd", params = list(ano = 2007))
+```
+
+## Equações
+
+$${\text{Média}=\frac {a_{1}+a_{2}+\cdots +a_{n}}{n}}$$
+
+Dá para colocar no texto também ${\text{Média}=\frac {a_{1}+a_{2}+\cdots +a_{n}}{n}}$
+
+
+## Citações
+
+@wickhamTidyData2014
+
+[@wickhamTidyData2014, p. 5]
+
+@rstats
+
+
+
+usei os pacotes: @R-dplyr, @R-knitr
+
+```{r include=FALSE}
+pacotes <- c("knitr", "dplyr")
+knitr::write_bib(pacotes, # pacotes para gerar a referencia
+                 # local para salvar o arquivo
+                 'referencias/packages.bib')
+```
+
+## Referência cruzada
+
+segundo a image \@ref(fig:logopinguins), blablabla
+
+```{r logopinguins, echo=FALSE, fig.cap="logo dos pinguins"}
+knitr::include_graphics("img/logo.png")
+```
+
+
+lá no capítulo \@ref(exemplo-parametros) nós fizemos ....
+
+
+## Referências

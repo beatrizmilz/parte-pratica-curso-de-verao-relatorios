@@ -77,3 +77,28 @@ torg |>
   knitr::kable() %>%
   kableExtra::kable_styling(full_width = F)
 ```
+
+
+## Exercícios
+1) No seu relatório (o arquivo primeiro_relatorio.Rmd), utilizando R, adicione as seguintes imagens. Deixe-as centralizadas, sem que apareça o código, e ocupando 80% da largura da página:
+
+a) Utilize a URL: https://allisonhorst.github.io/palmerpenguins/reference/figures/lter_penguins.png
+
+```{r echo=FALSE, fig.align='center', out.width="80%"}
+knitr::include_graphics("https://allisonhorst.github.io/palmerpenguins/reference/figures/lter_penguins.png")
+```
+
+
+b) Na pasta inicial do projeto, crie uma pasta chamada img/. Nesta pasta, salve a imagem, e adicione a imagem no relatório utilizando caminhos relativos: https://allisonhorst.github.io/palmerpenguins/reference/figures/logo.png
+
+
+```{r}
+knitr::include_graphics("img/logo.png")
+```
+
+Com o here:
+
+```{r}
+knitr::include_graphics(here::here("img", "logo.png"))
+```
+

@@ -1,0 +1,141 @@
+---
+title: "pinguins"
+author: "Beatriz"
+date: "2/7/2022"
+# output: html_document
+# output: 
+#   prettydoc::html_pretty:
+#     theme: leonids
+output:
+  rmdformats::readthedown:
+    highlight: kate    
+# output: bookdown::word_document2
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE)
+```
+
+```{r}
+library(magrittr, include.only = "%>%")
+# library(dplyr)
+# library(knitr)
+# library(kableExtra)
+```
+
+
+```{r}
+getwd()
+```
+
+```{r, echo=TRUE}
+caminho_pinguins_1 <- "../dados/pinguins.csv"
+
+caminho_pinguins_2 <- here::here("dados", "pinguins.csv")
+```
+
+```{r}
+pinguins_1 <- readr::read_csv(caminho_pinguins_1)
+dplyr::glimpse(pinguins_1)
+```
+
+```{r}
+pinguins_2 <- readr::read_csv(caminho_pinguins_2)
+dplyr::glimpse(pinguins_2)
+```
+
+```{r}
+#library(dplyr)
+pinguins_1 <- readr::read_csv("../dados/pinguins.csv")
+massa_media_pinguins <- round(mean(pinguins_1$massa_corporal, na.rm = TRUE)/1000, 2)
+```
+
+A base de dados pinguins apresenta dados referente à `r nrow(pinguins_1)` pinguins, das seguintes espécies: `r knitr::combine_words(unique(pinguins_1$especie), and = "e ")`. Os dados foram coletados entre os anos `r min(pinguins_1$ano)` e `r max(pinguins_1$ano)`, nas seguintes ilhas `r knitr::combine_words(unique(pinguins_1$ilha), and = "e ")`. O peso médio dos pinguins amostrados foi de `r massa_media_pinguins` Kg. Os dados foram obtidos através do pacote Palmer Penguins.
+
+```{r fig.align='center', fig.cap="Ilustração dos Pinguins",fig.alt='Desenho com três pinguis representando as três espécies', out.width="50%"}
+knitr::include_graphics("https://allisonhorst.github.io/palmerpenguins/reference/figures/lter_penguins.png")
+```
+
+```{r}
+torg <- pinguins_1 %>%
+  dplyr::filter(ilha == "Torgersen") %>%
+  dplyr::select(comprimento_bico:massa_corporal)
+```
+
+
+```{r}
+knitr::kable(torg)
+```
+
+```{r}
+DT::datatable(torg)
+```
+
+```{r}
+reactable::reactable(torg)
+```
+
+
+
+![](https://i.imgur.com/NAux1Xc.png){width="60%"}
+
+# Dúvida: tamanho da largura do kable:
+
+1) Usando kableExtra: https://haozhu233.github.io/kableExtra/
+
+https://haozhu233.github.io/kableExtra/awesome_table_in_html.html
+
+
+```{r}
+torg |> 
+  dplyr::select(comprimento_bico:profundidade_bico) |> 
+  knitr::kable() |> 
+  kableExtra::kable_styling(full_width = F)
+```
+
+
+## Exercícios
+1) No seu relatório (o arquivo primeiro_relatorio.Rmd), utilizando R, adicione as seguintes imagens. Deixe-as centralizadas, sem que apareça o código, e ocupando 80% da largura da página:
+
+a) Utilize a URL: https://allisonhorst.github.io/palmerpenguins/reference/figures/lter_penguins.png
+
+```{r echo=FALSE, fig.align='center', out.width="80%"}
+knitr::include_graphics("https://allisonhorst.github.io/palmerpenguins/reference/figures/lter_penguins.png")
+```
+
+
+b) Na pasta inicial do projeto, crie uma pasta chamada img/. Nesta pasta, salve a imagem, e adicione a imagem no relatório utilizando caminhos relativos: https://allisonhorst.github.io/palmerpenguins/reference/figures/logo.png
+
+
+```{r}
+knitr::include_graphics("../img/logo.png")
+```
+
+Com o here:
+
+```{r}
+knitr::include_graphics(here::here("img", "logo.png"))
+```
+
+- Exercício com tabela
+
+```{r}
+
+pinguins <- readr::read_csv("../dados/pinguins.csv")
+quantidade_de_especies <- pinguins |>
+  dplyr::count(especie, sort = TRUE) |>
+  janitor::adorn_totals()
+
+
+# formas de nomear as colunas: com rename
+quantidade_de_especies |> 
+  dplyr::rename("Espécie" = especie, "Número de pinguins" = n) |> 
+  knitr::kable() |> 
+  kableExtra::kable_styling(full_width = FALSE)
+
+# formas de nomear as colunas: com kable col.names
+quantidade_de_especies |> 
+  knitr::kable(col.names = c("Espécie", "Número de pinguins")) |> 
+  kableExtra::kable_styling(full_width = FALSE)
+```
+
