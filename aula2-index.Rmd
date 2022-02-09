@@ -1,0 +1,124 @@
+---
+title: "Aula 2"
+author: "Beatriz"
+date: "2/7/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```r
+install.packages("dplyr")
+```
+
+```{r}
+getwd()
+```
+
+
+```{r carregar-pacotes, message=FALSE, warning=FALSE}
+library(dplyr)
+```
+
+```{r}
+numero_min_de_cilindros <- 10
+
+carros_com_seis_ou_mais_cilindros <- mtcars |> 
+  dplyr::filter(cyl >= numero_min_de_cilindros) |> 
+  tibble::rownames_to_column("carro")
+
+
+# se 
+if (nrow(carros_com_seis_ou_mais_cilindros) == 0) {
+  frase_nome_dos_carros <-
+    "Não existem modelos que comprem esse filtro"
+} else {
+  nome_dos_carros <-
+    knitr::combine_words(carros_com_seis_ou_mais_cilindros$carro, and = " e ")
+  frase_nome_dos_carros <- paste0("São esses: ", nome_dos_carros)
+}
+  
+```
+
+
+Existe `r nrow(carros_com_seis_ou_mais_cilindros)` carros na base mtcars que tem `r numero_min_de_cilindros` ou mais cilindros. `r frase_nome_dos_carros`. 
+
+## R Markdown
+
+### Com visual editor
+
+This is an R Markdown docu*ment*. [Markdown]{.ul} is a simple formatting `syntax` for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+-   beatriz
+
+-   ana
+
+-   alan
+
+-   tereza
+
+1.  arroz
+
+2.  feijao
+
+> Fulano disse isso...
+
+[Slides do curso](https://beatrizmilz.github.io/2022-curso-de-verao-ime-usp-relatorios/slides/#46)
+
+[![Logo do pacote rmarkdown](https://beatrizmilz.github.io/python-brasil-2021-reticulate/img/hex-rmarkdown.png){width="232"}](https://rmarkdown.rstudio.com/)
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+### Sem visual editor
+
+**texto em negrito**, para fazer um texto em itálico precisamos usar apenas *um asterico*, para tachar um texto, ~~use til~~
+
+1.  comprar feijao
+
+2.  comprar arroz
+
+3.  comprar sabão
+
+outra lista que começa em outro numero:
+
+8.  comprar feijao
+
+9.  comprar arroz
+
+10. comprar sabão
+
+lista não numerada:
+
+-   comprar café
+
+    -   café descafeinado
+
+-   comprar chá
+
+-   comprar tody
+
+usei a função `dplyr::glimpse()` para ter um resumo da base de dados.
+
+> O Hadley me disse que o ggplot2 é o melhor pacote de visualização de dados.
+
+[é o que aparece quando a pessoa clica](é%20o%20link%20que%20vai%20abrir)
+
+[Documentação do pacote rmardowkn](https://rmarkdown.rstudio.com/)
+
+![logo do pacote rmarkdown, é uma imagem hexagonal vermelha, e o símbolo é uma pena branca](https://beatrizmilz.github.io/python-brasil-2021-reticulate/img/hex-rmarkdown.png){width="50%"}
+
+# titulo de primeira ordem
+
+## titulo 2
+
+### titulo 3
+
+
+
+
