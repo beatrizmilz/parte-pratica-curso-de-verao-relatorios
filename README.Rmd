@@ -11,7 +11,13 @@ knitr::opts_chunk$set(
 )
 ```
 
-# parte-pratica-curso-de-verao-relatorios
+# Códigos do curso Relatórios reprodutíveis com R
+
+- Curso de Verão IME-USP 2022 
+
+- Códigos usados na parte demonstrativa da aula (com live coding)
+
+- Saiba mais em: https://beatrizmilz.github.io/2022-curso-de-verao-ime-usp-relatorios/
 
 
 ## Arquivos .Rmd

@@ -1,7 +1,14 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# parte-pratica-curso-de-verao-relatorios
+# Códigos do curso Relatórios reprodutíveis com R
+
+-   Curso de Verão IME-USP 2022
+
+-   Códigos usados na parte demonstrativa da aula (com live coding)
+
+-   Saiba mais em:
+    <https://beatrizmilz.github.io/2022-curso-de-verao-ime-usp-relatorios/>
 
 ## Arquivos .Rmd
 
@@ -15,11 +22,11 @@
 
 ## Arquivos .html
 
-| arquivo                       | url                                                                                                   |
-|:------------------------------|:------------------------------------------------------------------------------------------------------|
-| aula-3-exemplo-params.html    | <https://beatrizmilz.github.io/parte-pratica-curso-de-verao-relatorios/aula-3-exemplo-params.html>    |
-| aula2-index.html              | <https://beatrizmilz.github.io/parte-pratica-curso-de-verao-relatorios/aula2-index.html>              |
-| aula2-pinguins.html           | <https://beatrizmilz.github.io/parte-pratica-curso-de-verao-relatorios/aula2-pinguins.html>           |
-| relatorio_pinguins_2007.html  | <https://beatrizmilz.github.io/parte-pratica-curso-de-verao-relatorios/relatorio_pinguins_2007.html>  |
-| relatorio_pinguins_2008.html  | <https://beatrizmilz.github.io/parte-pratica-curso-de-verao-relatorios/relatorio_pinguins_2008.html>  |
-| relatorio_pinguins_2009 .html | <https://beatrizmilz.github.io/parte-pratica-curso-de-verao-relatorios/relatorio_pinguins_2009> .html |
+| arquivo                      | url                                                                                                  |
+|:-----------------------------|:-----------------------------------------------------------------------------------------------------|
+| aula-3-exemplo-params.html   | <https://beatrizmilz.github.io/parte-pratica-curso-de-verao-relatorios/aula-3-exemplo-params.html>   |
+| aula2-index.html             | <https://beatrizmilz.github.io/parte-pratica-curso-de-verao-relatorios/aula2-index.html>             |
+| aula2-pinguins.html          | <https://beatrizmilz.github.io/parte-pratica-curso-de-verao-relatorios/aula2-pinguins.html>          |
+| relatorio_pinguins_2007.html | <https://beatrizmilz.github.io/parte-pratica-curso-de-verao-relatorios/relatorio_pinguins_2007.html> |
+| relatorio_pinguins_2008.html | <https://beatrizmilz.github.io/parte-pratica-curso-de-verao-relatorios/relatorio_pinguins_2008.html> |
+| relatorio_pinguins_2009.html | <https://beatrizmilz.github.io/parte-pratica-curso-de-verao-relatorios/relatorio_pinguins_2009.html> |
