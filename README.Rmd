@@ -1,0 +1,25 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+# parte-pratica-curso-de-verao-relatorios
+
+
+
+```{r}
+tibble::tibble(
+  arquivo = list.files(pattern = ".html|.Rmd"),
+url = paste0("https://beatrizmilz.github.io/parte-pratica-curso-de-verao-relatorios/", arquivo)
+) |> 
+  knitr::kable()
+```
+
