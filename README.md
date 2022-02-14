@@ -18,7 +18,6 @@
 | aula2-index.Rmd           | <https://github.com/beatrizmilz/parte-pratica-curso-de-verao-relatorios/blob/main/aula2-index.Rmd>           |
 | aula2-pinguins.Rmd        | <https://github.com/beatrizmilz/parte-pratica-curso-de-verao-relatorios/blob/main/aula2-pinguins.Rmd>        |
 | exemplo-tex.Rmd           | <https://github.com/beatrizmilz/parte-pratica-curso-de-verao-relatorios/blob/main/exemplo-tex.Rmd>           |
-| README.Rmd                | <https://github.com/beatrizmilz/parte-pratica-curso-de-verao-relatorios/blob/main/README.Rmd>                |
 
 ## Arquivos .html
 
@@ -30,3 +29,11 @@
 | relatorio_pinguins_2007.html | <https://beatrizmilz.github.io/parte-pratica-curso-de-verao-relatorios/relatorio_pinguins_2007.html> |
 | relatorio_pinguins_2008.html | <https://beatrizmilz.github.io/parte-pratica-curso-de-verao-relatorios/relatorio_pinguins_2008.html> |
 | relatorio_pinguins_2009.html | <https://beatrizmilz.github.io/parte-pratica-curso-de-verao-relatorios/relatorio_pinguins_2009.html> |
+
+## Arquivos .R
+
+| arquivo                     | url                                                                                                            |
+|:----------------------------|:---------------------------------------------------------------------------------------------------------------|
+| aula_3\_purrr_pinguins.R    | <https://github.com/beatrizmilz/parte-pratica-curso-de-verao-relatorios/blob/main/aula_3_purrr_pinguins.R>     |
+| aula-1-exemplo-importacao.R | <https://github.com/beatrizmilz/parte-pratica-curso-de-verao-relatorios/blob/main/aula-1-exemplo-importacao.R> |
+| aula4-configurando_github.R | <https://github.com/beatrizmilz/parte-pratica-curso-de-verao-relatorios/blob/main/aula4-configurando_github.R> |

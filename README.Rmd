@@ -27,6 +27,7 @@ tibble::tibble(
   arquivo = list.files(pattern = ".Rmd"),
 url = paste0("https://github.com/beatrizmilz/parte-pratica-curso-de-verao-relatorios/blob/main/", arquivo)
 ) |> 
+  dplyr::filter(!stringr::str_detect(arquivo, "README")) |> 
   knitr::kable()
 ```
 
@@ -40,3 +41,13 @@ url = paste0("https://beatrizmilz.github.io/parte-pratica-curso-de-verao-relator
   knitr::kable()
 ```
 
+
+## Arquivos .R
+
+```{r echo=FALSE}
+tibble::tibble(
+  arquivo = list.files(pattern = ".R$"),
+url = paste0("https://github.com/beatrizmilz/parte-pratica-curso-de-verao-relatorios/blob/main/", arquivo)
+) |> 
+  knitr::kable()
+```
