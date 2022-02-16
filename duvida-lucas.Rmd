@@ -1,0 +1,58 @@
+---
+title: "Exemplo: Inserir espaço (ou linhas vazias) entre as figuras"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+```
+
+```{r pacotes}
+library(ggplot2)
+```
+
+```{r}
+pinguins <- read.csv('dados/pinguins.csv', encoding = "UTF-8")
+```
+
+### Inserir espaço entre as figuras (dentro do chunk)
+
+```{r codigos, results='asis'}
+print( ggplot(pinguins[pinguins$especie=="Pinguim-de-barbicha",],
+       aes(x=massa_corporal, y = comprimento_bico))+
+         geom_point()+
+         labs(title = "Pinguim-de-barbicha") )
+
+cat("<br> <br> <br>")
+
+print( ggplot(pinguins[pinguins$especie=="Pinguim-de-adélia",],
+       aes(x=massa_corporal, y = comprimento_bico))+
+         geom_point()+
+         labs(title = "Pinguim-de-adélia") )
+
+cat("<br> <br> <br>")
+
+
+print( ggplot(pinguins[pinguins$especie=="Pinguim-gentoo",],
+       aes(x=massa_corporal, y = comprimento_bico))+
+         geom_point()+
+         labs(title = "Pinguim-gentoo") )
+
+cat("<br> <br> <br>")
+
+```
+
+### Inserir espaço entre as figuras (dentro do loop)
+
+
+```{r loop, results='asis'}
+for (i in unique(pinguins$especie)) {
+ 
+print( ggplot(pinguins[pinguins$especie==i,], aes(x=massa_corporal, y = comprimento_bico))+
+         geom_point()+
+         labs(title = i))
+  
+  cat("<br> <br> <br>")
+
+}  
+```
