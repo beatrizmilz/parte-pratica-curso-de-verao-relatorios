@@ -1,0 +1,52 @@
+---
+title: "Peso e altura por espécie - Star Wars"
+author: "Bea"
+date: "7/30/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r include=FALSE}
+library(dplyr)
+library(ggplot2)
+```
+
+```{r echo=FALSE, warning=FALSE, results='asis'}
+# aqui vc cria um vetor com tudo que quer repetir. no seu caso, mude pra municipios
+todas_as_especies <- unique(starwars$species) 
+
+# aqui vamos criar o código que vai repetir tudo
+for (especie in todas_as_especies) {
+  
+  
+  cat("<br> <h2> ", especie, "</h2>") # cria o titulo
+  
+  # cria o grafico
+  grafico <- starwars %>% 
+  tidyr::drop_na(species, height, mass) %>% 
+  filter(species == especie) %>% 
+  ggplot() +
+  geom_point(aes(x = height, y = mass)) + 
+  labs(title = especie)
+  
+  #  printa o gráfico
+  print(grafico)
+  
+  # pula a linha
+  cat("<br>")
+}
+```
+
+
+```{r, iris, results='asis'}
+for (i in unique(iris$Species)) {
+cat(paste("##",i,"\n\n"))
+print( ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width))+
+geom_point() )
+cat("\n\n\n")
+}
+```
+

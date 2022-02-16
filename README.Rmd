@@ -52,3 +52,4 @@ url = paste0("https://github.com/beatrizmilz/parte-pratica-curso-de-verao-relato
 ) |> 
   knitr::kable()
 ```
+
