@@ -1,0 +1,59 @@
+---
+title: "Códigos do curso Relatórios reprodutíveis com R"
+date: "`r Sys.Date()`"
+output:
+  rmdformats::downcute:
+    self_contained: true
+    default_style: "light"
+    downcute_theme: "default"
+---
+
+
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+
+- Curso de Verão IME-USP 2022 
+
+- Códigos usados na parte demonstrativa da aula (com live coding)
+
+- Saiba mais em: https://beatrizmilz.github.io/2022-curso-de-verao-ime-usp-relatorios/
+
+- Página do curso na Plataforma Cursos Extensão da USP: https://cursosextensao.usp.br/course/view.php?id=2991
+
+
+## Arquivos .Rmd
+
+```{r echo=FALSE}
+tibble::tibble(
+  arquivo = list.files(pattern = ".Rmd"),
+url = paste0("https://github.com/beatrizmilz/parte-pratica-curso-de-verao-relatorios/blob/main/", arquivo)
+) |> 
+  dplyr::filter(!stringr::str_detect(arquivo, "README")) |> 
+  knitr::kable()
+```
+
+## Arquivos .html
+
+```{r echo=FALSE}
+tibble::tibble(
+  arquivo = list.files(pattern = ".html"),
+url = paste0("https://beatrizmilz.github.io/parte-pratica-curso-de-verao-relatorios/", arquivo)
+) |> 
+  knitr::kable()
+```
+
+## Arquivos .R
+
+```{r echo=FALSE}
+tibble::tibble(
+  arquivo = list.files(pattern = ".R$"),
+url = paste0("https://github.com/beatrizmilz/parte-pratica-curso-de-verao-relatorios/blob/main/", arquivo)
+) |> 
+  knitr::kable()
+```
