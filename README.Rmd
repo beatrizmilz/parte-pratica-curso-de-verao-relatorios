@@ -43,7 +43,6 @@ url = paste0("https://beatrizmilz.github.io/parte-pratica-curso-de-verao-relator
   knitr::kable()
 ```
 
-
 ## Arquivos .R
 
 ```{r echo=FALSE}
