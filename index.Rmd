@@ -2,7 +2,7 @@
 title: "Códigos do curso Relatórios reprodutíveis com R"
 date: "`r Sys.Date()`"
 output:
-  rmdformats::downcute:
+  rmdformats::robobook:
     self_contained: true
     default_style: "light"
     downcute_theme: "default"
