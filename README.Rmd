@@ -19,6 +19,8 @@ knitr::opts_chunk$set(
 
 - Saiba mais em: https://beatrizmilz.github.io/2022-curso-de-verao-ime-usp-relatorios/
 
+- Página do curso na Plataforma Cursos Extensão da USP: https://cursosextensao.usp.br/course/view.php?id=2991
+
 
 ## Arquivos .Rmd
 
